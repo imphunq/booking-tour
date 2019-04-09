@@ -1,8 +1,11 @@
 Project 1: Booking Tour
+
 Member: Nguyễn Quang Phú
+
 Redmine: https://edu-redmine.sun-asterisk.vn/projects/booking-tour
 
 Redmine Flow:
+
 1. Tất cả công việc cần làm (Bug/Task/Feature/Support) phải được tạo ticket trước rồi mới thực hiện. Lưu ý ticket cần có description rõ ràng.
 
 2. Trainee update ticket
