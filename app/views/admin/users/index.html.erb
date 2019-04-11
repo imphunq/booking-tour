@@ -2,7 +2,6 @@
   <div class="content-box-large">
     <div class="panel-heading">
       <div class="panel-title"><%= t "users.index.list_user" %></div>
-
       <div class="panel-options">
         <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
         <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
@@ -39,7 +38,7 @@
               <%= link_to edit_admin_user_path(user) do %>
                 <i class="glyphicon glyphicon-pencil"></i>
               <% end %>
-              <%= link_to do %>
+              <%= link_to admin_user_path(user), method: :delete, data: {confirm: t("admin.users.index.you_sure")} do %>
                 <i class="glyphicon glyphicon-trash"></i>
               <% end %>
             </td>

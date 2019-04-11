@@ -30,9 +30,6 @@ en:
       myacc: My account
     application_admin:
       title: Booking tour
-    headeradmin:
-      search: Search
-      logout: Logout
   static_pages:
     home:
       newesttour: Các tour mới nhất
@@ -71,9 +68,22 @@ en:
     users:
       create:
         add_succ: Add new success
+      edit:
+        not_find: Cannot find this user
+        edit_title: Edit this user
+        edit_sub: Edit
+      destroy:
+        delete_succ: Delete success
+        delete_fail: Delete fail
+        cannot_delete: You cannot delete another admin
+      update:
+        edit_succ: Edit success
       new:
-        user: User
+        add_new: Add new
         admin: Admin
+        user: User
+      index:
+        you_sure: You sure?
   sessions:
     new:
       login: LOGIN
