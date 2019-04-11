@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :phone
       t.boolean :permission, default: false
-
       t.timestamps
     end
   end
