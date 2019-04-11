@@ -24,7 +24,6 @@ class UsersController < ApplicationController
       flash[:success] = t "controllers.users_controller.update_succ"
       redirect_to edit_user_path
     else
-      flash[:danger] =  t "controllers.users_controller.update_fail"
       render :edit
     end
   end

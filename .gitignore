@@ -4,7 +4,6 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
@@ -29,11 +28,7 @@ config/environments/*.local.yml
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
-/config/credentials.yml.enc
-/config/database.yml
-/test/*
-
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
+config/master.key
+config/credentials.yml.enc
+config/database.yml
+test/*

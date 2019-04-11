@@ -15,8 +15,12 @@
       </li>
       <li><%= link_to t(".hotelhanoi") %></li>
       <% if logged_in? %>
-        <li><%= link_to "Logout", logout_path, method: :delete %></li>
-        <li><%= link_to current_user.name, user_path(current_user) %></li>
+        <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+        <% if current_user.permission? %>
+          <li><%= link_to t(".admin_page"), admin_admin_index_path %></li>
+        <% else %>
+          <li><%= link_to current_user.name, user_path(current_user) %></li>
+        <% end %>
       <% else %>
       <li><%= link_to t(".signin"), login_path %></li>
       <li><%= link_to t(".signup"), signup_path %>
