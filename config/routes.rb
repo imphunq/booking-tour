@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :users
   namespace :admin do
+    root "static_pages#index"
     resources :users
-    get "admin/index", to: "static_pages#index"
   end
 end

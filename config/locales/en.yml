@@ -19,15 +19,20 @@ en:
       login: Login
       signup: Sign up
       page: Pages
+      list_user: List user
+      add_user: Add user
+      dashboard: Dashboard
+      user: Users
     headeradmin:
       search: Search
       logout: Logout
       admin_page: Admin page
       myacc: My account
-    nav:
-      dashboard: Dashboard
     application_admin:
       title: Booking tour
+    headeradmin:
+      search: Search
+      logout: Logout
   static_pages:
     home:
       newesttour: Các tour mới nhất
@@ -45,11 +50,30 @@ en:
       signup: SIGN UP
       confirmation: Confirmation
       create: Create my account
+      add_new: Add new user
     create:
       regis_success: Register success
     edit:
       update: Update
       edit: Edit Profile
+    show:
+      edit_pro: Edit my Profile
+    index:
+      email: Email
+      password: Password
+      name: Name
+      address: Addess
+      phone: Phone
+      permission: Permission
+      action: Action
+      list_user: List user
+  admin:
+    users:
+      create:
+        add_succ: Add new success
+      new:
+        user: User
+        admin: Admin
   sessions:
     new:
       login: LOGIN

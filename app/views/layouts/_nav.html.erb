@@ -2,7 +2,7 @@
   <div class="sidebar content-box" style="display: block;">
     <ul class="nav">
       <li class="current">
-        <%= link_to "#" do %>
+        <%= link_to admin_root_path do %>
           <i class="glyphicon glyphicon-home"></i> <%= t "dashboard" %>
         <% end %>
       </li>
@@ -14,6 +14,16 @@
         <ul>
           <li><%= link_to t(".login"), "#" %></li>
           <li><%= link_to t(".signup"), "#" %></li>
+        </ul>
+      </li>
+      <li class="submenu">
+        <%= link_to do %>
+          <i class="glyphicon glyphicon-user"></i> <%= t ".user" %>
+          <span class="caret pull-right"></span>
+        <% end %>
+        <ul>
+          <li><%= link_to t("layouts.nav.list_user"), admin_users_path %></li>
+          <li><%= link_to t("layouts.nav.add_user"), new_admin_user_path %></li>
         </ul>
       </li>
   </ul>
