@@ -104,4 +104,5 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
   add_foreign_key "rates", "users", column: "users_id"
   add_foreign_key "sales", "tours", column: "tours_id"
   add_foreign_key "tours", "hotels", column: "hotels_id"
+
 end

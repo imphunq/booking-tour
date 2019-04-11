@@ -1,3 +1,28 @@
-# en:
 en:
-  hello: "Hello world"
+  layouts:
+    header:
+      hanoi: HA NOI
+      hotelntour: Hotel & Tour Ha Noi
+      home: Home
+      hotelhanoi: Khách sạn Hà Nội
+      signin: Đăng nhập
+      signup: Đăng ký
+    footer:
+      contact: Liên hệ với chúng tôi
+      address: K67 Hoàng Đạo Thúy, Quận Thanh Xuân, TP Hà Nội
+      phone: 039916289
+      email: quangphu@gmail.com
+      entermail: Nhập email để nhận thông tin
+  static_pages:
+    home:
+      newesttour: Các tour mới nhất
+      codetour: Mã tour
+      time: Thời gian
+      money: Giá tiền
+      info: Thông tin về Hà Nội Tour
+      tourismhanoi: Tourismhanoi
+      info_ensure: cung cấp hệ thống đặt tour du lịch trực tuyến chuyên nghiệp thuộc FunaGo.net. Đảm bảo cung chất lượng dịch vụ, giá tốt nhất và uy tính nhất.
+      benifit: Để tạo thuận lợi và mang lại lợi ích tốt nhất cho khách du lịch,
+      card: ngoài cung cấp hệ thống đặt tour du lịch trực tuyến còn mang lại cho bạn những dịch vụ như hệ thống đặt phòng khách sạn, vé máy bay, visa, thuê xe du lịch,…
+      go: Đến với chúng tôi, bạn sẽ tận hưởng trọn vẹn kì nghĩ của mình.
+
