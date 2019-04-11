@@ -5,10 +5,12 @@ en:
       hotelntour: Hotel & Tour Ha Noi
       home: Home
       hotelhanoi: Khách sạn Hà Nội
+      alllocation: Tất cả địa điểm
       signin: Đăng nhập
       signup: Đăng ký
       logout: Logout
       admin_page: Admin page
+      tour_hanoi: Tour du lịch Hà Nội
     footer:
       contact: Liên hệ với chúng tôi
       address: K67 Hoàng Đạo Thúy, Quận Thanh Xuân, TP Hà Nội
@@ -23,6 +25,19 @@ en:
       add_user: Add user
       dashboard: Dashboard
       user: Users
+      hotel: Hotel
+      list_hotel: List hotel
+      add_hotel: Add hotel
+      tour: Tours
+      list_tour: List Tour
+      add_tour: Add Tour
+      list_location: List Location
+      add_location: Add location
+      sale: Sale
+      list_sale: List sale
+      add_sale: Add sale
+      comment: Comment
+      order: Order
     headeradmin:
       search: Search
       logout: Logout
@@ -32,7 +47,7 @@ en:
       title: Booking tour
   static_pages:
     home:
-      newesttour: Các tour mới nhất
+      newesttour: Newest location
       codetour: Mã tour
       time: Thời gian
       money: Giá tiền
@@ -42,6 +57,7 @@ en:
       benifit: Để tạo thuận lợi và mang lại lợi ích tốt nhất cho khách du lịch,
       card: ngoài cung cấp hệ thống đặt tour du lịch trực tuyến còn mang lại cho bạn những dịch vụ như hệ thống đặt phòng khách sạn, vé máy bay, visa, thuê xe du lịch,…
       go: Đến với chúng tôi, bạn sẽ tận hưởng trọn vẹn kì nghĩ của mình.
+      othertour: Các tour khác
   users:
     new:
       signup: SIGN UP
@@ -95,3 +111,67 @@ en:
       update_succ: Update profile success
       update_fail: Update fail
       find_fail: Cannot find this user
+  admin:
+    destroy:
+      delete_succ: Delete success
+      delete_fail: Delete fail
+      cannot_delete: You cannot delete another admin
+      cannot_del: Cannot delete
+    update:
+      edit_succ: Edit success
+    new:
+      add_new: Add new
+      admin: Admin
+      user: User
+      add_hotel: Add new hotel
+      add_tour: Add tour
+      tour: Tour
+      add_location: Add new location
+      add_sale: Add new sale
+    create:
+      create_hotel: Create hotel success
+      add_succ: Add new success
+    index:
+      list_hotel: List hotel
+      list_tour: List tour
+      name: Name
+      address: Address
+      description: Description
+      departure: Departure Day
+      duration: Duration
+      money: Money
+      action: Action
+      you_sure: You sure
+      sale: Sale
+      comment: Comment
+      content: Content
+      user: User
+      location: Location
+      tour: Tour
+      money: Money
+      quantity: Quantity
+      order: Order
+    edit:
+      edit_hotel: Edit hotel
+      edit_tour: Edit tour
+      not_found: Not found
+      edit_location: Edit location
+      edit_sale: Edit sale
+  locations:
+    show:
+      info_add: Thông tin về địa điểm du lịch
+      money: Giá vé
+      time: Thời gian
+      schedule: Lịch trình
+      daydepart: Ngày khởi hành
+      add_relate: Địa điểm liên quan
+      book_tour: Đặt tour tại đây
+      number_ticket: Số vé
+      book: Book tour
+      comment: Comment
+  orders:
+    index:
+      book: History
+  mailers:
+    user_mailer:
+      success: Booking tour success

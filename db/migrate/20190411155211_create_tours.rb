@@ -6,7 +6,7 @@ class CreateTours < ActiveRecord::Migration[5.2]
       t.integer :duration
       t.float :money
       t.text :schedule
-      t.references :hotels, foreign_key: true
+      t.string :picture
       t.timestamps
     end
   end

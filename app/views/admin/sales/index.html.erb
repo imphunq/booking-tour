@@ -1,0 +1,46 @@
+<div class="col-md-12">
+  <div class="content-box-large">
+    <div class="panel-heading">
+      <div class="panel-title"><%= t "admin.index.sale" %></div>
+      <div class="panel-options">
+        <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+        <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+      </div>
+    </div>
+    <div class="panel-body">
+    <% flash.each do |key, value| %>
+      <div class="row">
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      </div>
+    <% end %>
+      <table class="table table-hover">
+        <tr>
+          <th>#</th>
+          <th><%= t "admin.index.sale" %></th>
+          <th><%= t "admin.index.action" %></th>
+        </tr>
+        <tbody>
+          <% @sales.each_with_index do |sale,index| %>
+          <tr>
+            <td><%= count_number index, @sales.current_page %></td>
+            <td><%= sale.sale_of %></td>
+            <td>
+              <%= link_to edit_admin_sale_path(sale) do %>
+                <i class="glyphicon glyphicon-pencil"></i>
+              <% end %>
+              <%= link_to admin_sale_path(sale), method: :delete, data: {confirm: t("admin.index.you_sure")} do %>
+                <i class="glyphicon glyphicon-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @sales, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>
+</div>
+

@@ -4,6 +4,7 @@
   <title><%= t ".title" %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <%= javascript_include_tag Ckeditor.cdn_url, media: "all", "data-turbolinks-track": "reload" %>
   <%= stylesheet_link_tag "admin/admin", media: "all", "data-turbolinks-track": "reload" %>
   <%= javascript_include_tag "admin/admin", "data-turbolinks-track": "reload" %>
 </head>

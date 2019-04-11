@@ -4,46 +4,21 @@
     <div class="title_newest">
       <p><%= t ".newesttour" %></p>
     </div>
-    <div class="three">
-      <div class="three_img">
-        <%= link_to image_tag("ho-guom-1.jpg") %>
+    <div class="three row">
+      <% @location_newest.each do |l| %>
+      <div class="three_img col-md-3">
+        <%= link_to image_tag l.picture.url %>
         <div class="name_img">
-          <p><%= link_to "Tour vòng quanh Hà Nội", "#" %></p>
+          <p><%= link_to l.name, location_path(l) %></p>
         </div>
         <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
+          <p><span><%= t ".time" %></span> <%= l.tour.duration %></p>
         </div>
         <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
+          <p><span><%= t ".money" %></span> <%= l.tour.money %></p>
         </div>
       </div>
-      <div class="three_img">
-        <%= link_to image_tag("ho-guom-1.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour vòng quanh Hà Nội", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-      <div class="three_img">
-        <%= link_to image_tag("ho-guom-1.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour vòng quanh Hà Nội", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
+      <%end%>
     </div>
   </div>
 
@@ -53,135 +28,26 @@
 
   <div id="extendTour">
     <div id="title_rest">
-      <p>Các tour khác</p>
+      <p><%= t ".othertour" %></p>
     </div>
     <div class="row">
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
+     <% @location.each do |location| %>
+      <div class="three_img col-md-3">
+        <%= link_to image_tag location.picture.url %>
         <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
+          <p><%= link_to location.name, location_path(location) %></p>
         </div>
         <div class="left">
-          <p><span><%= t ".codetour" %> </span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
+          <p><span><%= t ".time" %></span> <%= location.tour.duration %></p>
         </div>
         <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
+          <p><span><%= t ".money" %></span> <%= location.tour.money %></p>
         </div>
       </div>
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><a href="#">Tour đi dạo ở phố đi bộ</a></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
-      <div class="three_img">
-        <%= link_to image_tag("phoco.jpg") %>
-        <div class="name_img">
-          <p><%= link_to "Tour đi dạo ở phố đi bộ", "#" %></p>
-        </div>
-        <div class="left">
-          <p><span><%= t ".codetour" %></span> MT1-KHYQ</p>
-          <p><span><%= t ".time" %></span> 1 ngày</p>
-        </div>
-        <div class="right">
-          <p><span><%= t ".money" %></span> 1000k</p>
-        </div>
-      </div>
+      <%end%>
     </div>
   </div>
-
+  <%= paginate @location, theme: "twitter-bootstrap-3" %>
   <div id="centerHr">
     <span><%= t ".info" %></span>
   </div>

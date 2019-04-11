@@ -1,0 +1,21 @@
+<% @comments.each do |comment| %>
+<div class="row text-center">
+  <div class="col-md-3">
+    <b><%= comment.user.name %>:</b>
+  </div>
+  <div class="col-md-6 text-left">
+    <p><%= comment.content %></p>
+  </div>
+  <div class="col-md-3">
+    <p><%= comment.created_at %></p>
+    <% if logged_in? %>
+    <% if current_user.id == comment.user_id %>
+    <%= link_to comment_path(comment), method: :delete, data: {confirm: t("admin.index.you_sure")}, remote: :true, class: "destroy-order" do %>
+    <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+<hr>
+<% end %>

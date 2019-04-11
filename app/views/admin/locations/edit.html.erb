@@ -1,0 +1,42 @@
+<div class="col-md-6">
+  <div class="content-box-large">
+    <div class="panel-heading">
+      <div class="panel-title"><%= t "admin.edit.edit_location" %></div>
+
+      <div class="panel-options">
+        <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+        <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <%= form_for [:admin,@location] do |f| %>
+        <fieldset>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :address %>
+            <%= f.text_field :address, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :picture %>
+            <%= image_tag @location.picture.url, class: "image-admin" %>
+            <%= f.file_field :picture, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.cktext_area :description, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :tour_id, t("admin.new.tour") %>
+            <%= f.select :tour_id, tour, class: "form-control" %>
+          </div>
+        </fieldset>
+        <div>
+            <%= f.submit t("admin.edit.edit_location"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

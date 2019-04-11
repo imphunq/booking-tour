@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi</h1>
+    <p>
+     Ban da dat tour du lich thanh cong<br>
+    </p>
+    <p>Tour du lich ban dat tai <%= @order.location.name %> trong <%= @order.location.tour.duration %> </p>
+    <p>Tour du lich cua ban gia: <%= @order.money %><br></p>
+    <p>Ban da dat: <%= @order.quantity %><br></p>
+    <p>Tong: <%= @order.quantity*@order.money %></p>
+  </body>
+</html>

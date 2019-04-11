@@ -1,0 +1,48 @@
+<div class="col-md-12">
+  <div class="content-box-large">
+    <div class="panel-heading">
+      <div class="panel-title"><%= t "admin.index.order" %></div>
+      <div class="panel-options">
+        <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+        <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+      </div>
+    </div>
+    <div class="panel-body">
+    <% flash.each do |key, value| %>
+      <div class="row">
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      </div>
+    <% end %>
+      <table class="table table-hover">
+        <tr>
+          <th>#</th>
+          <th><%= t "admin.index.user" %></th>
+          <th><%= t "admin.index.location" %></th>
+          <th><%= t "admin.index.money" %></th>
+          <th><%= t "admin.index.quantity" %></th>
+          <th><%= t "admin.index.action" %></th>
+        </tr>
+        <tbody>
+          <% @orders.each_with_index do |order,index| %>
+          <tr>
+            <td><%= count_number index, @orders.current_page %></td>
+            <td><%= order.user.name %></td>
+            <td><%= order.location.name %></td>
+            <td><%= order.money %></td>
+            <td><%= order.quantity %></td>
+            <td>
+              <%= link_to admin_order_path(order) , method: :delete, data: {confirm: t("admin.index.you_sure")} do %>
+                <i class="glyphicon glyphicon-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>
+</div>

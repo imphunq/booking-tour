@@ -3,23 +3,15 @@
     <%= link_to image_tag("banner.jpg", alt: "Banner") %>
   </div>
   <div class="three">
-    <div class="three_img">
-      <%= link_to image_tag("three.png", alt: "Tour") %>
+    <% @location_rand.each do |l| %>
+    <div class="three_img col-md-3">
+      <%= link_to location_path(l) do %>
+        <%= image_tag(l.picture.url, alt: "Tour") %>
+      <% end %>
       <div class="name_img">
-        <p>Tour Hồ Gươm chỉ 550k</p>
+        <p><%= l.name %></p>
       </div>
     </div>
-    <div class="three_img">
-      <%= link_to image_tag("three.png", alt: "Tour") %>
-      <div class="name_img">
-        <p>Tour Hồ Gươm chỉ 550k</p>
-      </div>
-    </div>
-    <div class="three_img">
-      <%= link_to image_tag("three.png", alt: "Tour") %>
-      <div class="name_img">
-        <p>Tour Hồ Gươm chỉ 550k</p>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>

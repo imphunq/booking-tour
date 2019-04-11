@@ -4,7 +4,8 @@ class CreateLocations < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :address
       t.text :description
-      t.references :tours, foreign_key: true
+      t.string :picture
+      t.references :tour, foreign_key: true
       t.timestamps
     end
   end
