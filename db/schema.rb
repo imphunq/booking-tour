@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
     t.string "gender"
     t.string "address"
     t.string "phone"
-    t.boolean "permission"
+    t.boolean "permission", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

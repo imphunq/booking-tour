@@ -25,4 +25,10 @@ en:
       benifit: Để tạo thuận lợi và mang lại lợi ích tốt nhất cho khách du lịch,
       card: ngoài cung cấp hệ thống đặt tour du lịch trực tuyến còn mang lại cho bạn những dịch vụ như hệ thống đặt phòng khách sạn, vé máy bay, visa, thuê xe du lịch,…
       go: Đến với chúng tôi, bạn sẽ tận hưởng trọn vẹn kì nghĩ của mình.
-
+  users:
+    new:
+      signup: SIGN UP
+      confirmation: Confirmation
+      create: Create my account
+    create:
+      regis_success: Register success

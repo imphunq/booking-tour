@@ -1,0 +1,30 @@
+<div class="row signup">
+  <h1 class="text-center text-info"><%= t ".signup" %></h1>
+  <div class="col-lg-offset-4 col-lg-4">
+    <% flash.each do |key, value| %>
+      <div class="row">
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      </div>
+    <% end %>
+    <%= form_for @user do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %><br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %><br>
+
+      <%= f.label :password_confirmation, t(".confirmation") %>
+      <%= f.password_field :password_confirmation, class: "form-control" %><br>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control" %><br>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: "form-control" %><br>
+
+      <%= f.submit t(".create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
