@@ -95,4 +95,13 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "tours", column: "tours_id"
+  add_foreign_key "comments", "users", column: "users_id"
+  add_foreign_key "locations", "tours", column: "tours_id"
+  add_foreign_key "orders", "tours", column: "tours_id"
+  add_foreign_key "orders", "users", column: "users_id"
+  add_foreign_key "rates", "tours", column: "tours_id"
+  add_foreign_key "rates", "users", column: "users_id"
+  add_foreign_key "sales", "tours", column: "tours_id"
+  add_foreign_key "tours", "hotels", column: "hotels_id"
 end
