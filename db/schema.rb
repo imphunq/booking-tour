@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
     t.string "gender"
     t.string "address"
     t.string "phone"
-    t.boolean "permission"
+    t.boolean "permission", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -104,5 +104,4 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
   add_foreign_key "rates", "users", column: "users_id"
   add_foreign_key "sales", "tours", column: "tours_id"
   add_foreign_key "tours", "hotels", column: "hotels_id"
-
 end

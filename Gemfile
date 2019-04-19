@@ -4,7 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.5.0"
 
 gem "rails", "~> 5.2.3"
+gem "bcrypt"
 gem "rails-i18n"
+gem "bootstrap-sass","3.3.7"
+gem "jquery-rails"
+gem "config"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"
