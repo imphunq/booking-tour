@@ -32,3 +32,10 @@ en:
       create: Create my account
     create:
       regis_success: Register success
+  sessions:
+    new:
+      login: LOGIN
+      log_in: Log in
+  controllers:
+    sessions_controller:
+      invalid: Invalid email/password combination
