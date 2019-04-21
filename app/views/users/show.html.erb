@@ -1,0 +1,27 @@
+<div class="row signup">
+  <h1 class="text-center text-info">Profile</h1>
+  <div class="col-lg-offset-4 col-lg-4">
+    <% flash.each do |key, value| %>
+      <div class="row">
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= form_for @user do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control", disabled: true %><br>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control", disabled: true %><br>
+      <%= f.label :birth %>
+      <%= f.text_field :birth, class: "form-control", disabled: true %><br>
+      <%= f.label :address %>
+      <%= f.text_field :address, class: "form-control", disabled: true %><br>
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: "form-control", disabled: true %><br>
+    <% end %>
+    <%= link_to "Edit my Profile", edit_user_path %>
+
+  </div>
+</div>

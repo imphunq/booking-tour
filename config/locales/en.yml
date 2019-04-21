@@ -13,6 +13,10 @@ en:
       phone: 039916289
       email: quangphu@gmail.com
       entermail: Nhập email để nhận thông tin
+    nav:
+      login: Login
+      signup: Sign up
+      page: Pages
   static_pages:
     home:
       newesttour: Các tour mới nhất
@@ -32,6 +36,9 @@ en:
       create: Create my account
     create:
       regis_success: Register success
+    edit:
+      update: Update
+      edit: Edit Profile
   sessions:
     new:
       login: LOGIN
@@ -39,3 +46,7 @@ en:
   controllers:
     sessions_controller:
       invalid: Invalid email/password combination
+    users_controller:
+      update_succ: Update profile success
+      update_fail: Update fail
+      find_fail: Cannot find this user
