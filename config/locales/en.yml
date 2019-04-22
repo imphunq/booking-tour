@@ -7,6 +7,8 @@ en:
       hotelhanoi: Khách sạn Hà Nội
       signin: Đăng nhập
       signup: Đăng ký
+      logout: Logout
+      admin_page: Admin page
     footer:
       contact: Liên hệ với chúng tôi
       address: K67 Hoàng Đạo Thúy, Quận Thanh Xuân, TP Hà Nội
@@ -17,6 +19,15 @@ en:
       login: Login
       signup: Sign up
       page: Pages
+    headeradmin:
+      search: Search
+      logout: Logout
+      admin_page: Admin page
+      myacc: My account
+    nav:
+      dashboard: Dashboard
+    application_admin:
+      title: Booking tour
   static_pages:
     home:
       newesttour: Các tour mới nhất
