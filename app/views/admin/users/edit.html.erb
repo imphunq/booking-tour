@@ -1,7 +1,8 @@
 <div class="col-md-6">
   <div class="content-box-large">
     <div class="panel-heading">
-      <div class="panel-title"><%= t "users.new.add_new" %></div>
+      <div class="panel-title"><%= t "admin.users.edit.edit_title" %></div>
+
       <div class="panel-options">
         <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
         <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
@@ -12,15 +13,7 @@
         <fieldset>
           <div class="form-group">
             <%= f.label :email %>
-            <%= f.email_field :email, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :password %>
-            <%= f.password_field :password, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :password_confirmation, "Confirmation" %>
-            <%= f.password_field :password_confirmation, class: "form-control" %>
+            <%= f.email_field :email, class: "form-control", disabled: :disabled %>
           </div>
           <div class="form-group">
            <%= f.label :name %>
@@ -34,16 +27,10 @@
            <%= f.label :address %>
            <%= f.text_field :address, class: "form-control" %>
           </div>
-          <div class="form-group">
-           <%= f.radio_button :permission, false , checked: true %> <%= t "admin.users.new.user" %>
-           <%= f.radio_button :permission, true %> <%= t "admin.users.new.admin" %>
-          </div>
-        </fieldset>
         </fieldset>
         <div>
-            <%= f.submit t("admin.users.new.add_new"), class: "btn btn-primary" %>
+            <%= f.submit t("admin.users.edit.edit_sub"), class: "btn btn-primary" %>
         </div>
-        </fieldset>
       <% end %>
     </div>
   </div>
