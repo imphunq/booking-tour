@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row signup">
+    <h1 class="text-center text-info"><%= t ".book" %></h1>
+    <div class="col-lg-offset-4 col-lg-4">
+      <% flash.each do |key, value| %>
+        <div class="row">
+          <div class="alert alert-<%= key %>">
+            <%= value %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-10"></div>
+      <table class="table table-hover">
+        <tr>
+          <th class="text-center"><%= t "admin.index.location" %></th>
+          <th class="text-center"><%= t "admin.index.money" %></th>
+          <th class="text-center"><%= t "admin.index.quantity" %></th>
+          <th class="text-center"><%= t "admin.index.action" %></th>
+        </tr>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.location.name %></td>
+            <td><%= order.money %></td>
+            <td><%= order.quantity %></td>
+            <td>
+              <%= link_to order_path(order) , method: :delete, data: {confirm: t("admin.index.you_sure")}, remote: :true, class: "destroy-order" do %>
+                <i class="glyphicon glyphicon-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

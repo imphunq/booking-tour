@@ -1,0 +1,35 @@
+<% if @locations.any? %>
+  <div class="container location">
+    <div class="tourName">
+    <% if @tour %>
+      <h2><%= @tour.name %></h2>
+    <% else %>
+      <h2 class="text-center">All locations</h2>
+    <% end %>
+    </div>
+    <div class="row">
+    <%= form_tag locations_path, method: :get , class: "form-inline" do %>
+      <p class="text-right"><%= text_field_tag :search, params[:search], class: "form-control"  %>
+      <%= submit_tag "Search", :name=>nil, onclick: "return checkSearch()", class: "btn btn-success" %></p>
+    <% end %>
+    </div>
+    <div class="row row-image">
+     <% @locations.each do |location| %>
+      <div class="three_img col-md-3">
+        <%= link_to image_tag location.picture.url %>
+        <div class="name_img">
+          <p><%= link_to location.name, location_path(location) %></p>
+        </div>
+        <div class="left">
+          <p><span><%= t ".time" %></span>: <%= location.tour.duration %>days</p>
+        </div>
+        <div class="right">
+          <p><span><%= t ".money" %></span>: <%= location.tour.money %></p>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
+<% else %>
+  <p class="text-danger text-center">No data to display</p>
+<% end %>

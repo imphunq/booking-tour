@@ -2,3 +2,5 @@ maximum_name: 50
 minimum_pass: 6
 maximum_email: 255
 paginate_perpage: 5
+paginate_homepage: 10
+maximum_newest: 3

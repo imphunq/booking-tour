@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_161404) do
+ActiveRecord::Schema.define(version: 2019_04_28_101259) do
+
+  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "type", limit: 30
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.integer "status"
-    t.bigint "tours_id"
-    t.bigint "users_id"
+    t.bigint "location_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tours_id"], name: "index_comments_on_tours_id"
-    t.index ["users_id"], name: "index_comments_on_users_id"
+    t.index ["location_id"], name: "index_comments_on_location_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "hotels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,39 +45,40 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
     t.string "name"
     t.string "address"
     t.text "description"
-    t.bigint "tours_id"
+    t.string "picture"
+    t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tours_id"], name: "index_locations_on_tours_id"
+    t.index ["tour_id"], name: "index_locations_on_tour_id"
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "tours_id"
+    t.bigint "user_id"
+    t.bigint "location_id"
     t.float "money"
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tours_id"], name: "index_orders_on_tours_id"
-    t.index ["users_id"], name: "index_orders_on_users_id"
+    t.index ["location_id"], name: "index_orders_on_location_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "quantity"
-    t.bigint "users_id"
-    t.bigint "tours_id"
+    t.bigint "user_id"
+    t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tours_id"], name: "index_rates_on_tours_id"
-    t.index ["users_id"], name: "index_rates_on_users_id"
+    t.index ["tour_id"], name: "index_rates_on_tour_id"
+    t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
   create_table "sales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "tours_id"
+    t.bigint "tour_id"
     t.integer "sale_of"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tours_id"], name: "index_sales_on_tours_id"
+    t.index ["tour_id"], name: "index_sales_on_tour_id"
   end
 
   create_table "tours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,10 +87,9 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
     t.integer "duration"
     t.float "money"
     t.text "schedule"
-    t.bigint "hotels_id"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["hotels_id"], name: "index_tours_on_hotels_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,13 +105,12 @@ ActiveRecord::Schema.define(version: 2019_04_11_161404) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "tours", column: "tours_id"
-  add_foreign_key "comments", "users", column: "users_id"
-  add_foreign_key "locations", "tours", column: "tours_id"
-  add_foreign_key "orders", "tours", column: "tours_id"
-  add_foreign_key "orders", "users", column: "users_id"
-  add_foreign_key "rates", "tours", column: "tours_id"
-  add_foreign_key "rates", "users", column: "users_id"
-  add_foreign_key "sales", "tours", column: "tours_id"
-  add_foreign_key "tours", "hotels", column: "hotels_id"
+  add_foreign_key "comments", "locations"
+  add_foreign_key "comments", "users"
+  add_foreign_key "locations", "tours"
+  add_foreign_key "orders", "locations"
+  add_foreign_key "orders", "users"
+  add_foreign_key "rates", "tours"
+  add_foreign_key "rates", "users"
+  add_foreign_key "sales", "tours"
 end

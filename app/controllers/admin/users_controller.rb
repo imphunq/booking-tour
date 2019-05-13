@@ -14,7 +14,7 @@ module Admin
     def create
       @user = User.create user_params
       if @user.save
-        flash[:success] = t "admin.users.create.add_succ"
+        flash[:success] = "Add new success"
         redirect_to admin_users_path
       else
         render :new
@@ -34,9 +34,9 @@ module Admin
 
     def destroy
       if @user.destroy
-        flash[:success] = t "admin.users.destroy.delete_succ"
+        flash[:success] = t "admin.destroy.delete_succ"
       else
-        flash[:danger] = t "admin.users.destroy.delete_fail"
+        flash[:danger] = t "admin.destroy.delete_fail"
       end
       redirect_to admin_users_path
     end

@@ -26,6 +26,64 @@
           <li><%= link_to t("layouts.nav.add_user"), new_admin_user_path %></li>
         </ul>
       </li>
+      <li class="submenu">
+       <a href="#">
+        <i class="glyphicon glyphicon-user"></i> <%= t ".hotel" %>
+        <span class="caret pull-right"></span>
+      </a>
+      <ul>
+        <li><%= link_to t(".list_hotel"), admin_hotels_path %></li>
+        <li><%= link_to t(".add_hotel"),  new_admin_hotel_path %></li>
+      </ul>
+      </li>
+      <li class="submenu">
+       <%= link_to do %>
+        <i class="glyphicon glyphicon-road"></i> <%= t ".tour" %>
+        <span class="caret pull-right"></span>
+      <% end %>
+      <ul>
+        <li><%= link_to t(".list_tour"), admin_tours_path %></li>
+        <li><%= link_to t(".add_tour"),  new_admin_tour_path %></li>
+      </ul>
+      </li>
+      <li class="submenu">
+       <%= link_to do %>
+        <i class="glyphicon glyphicon-globe"></i> Location
+        <span class="caret pull-right"></span>
+      <% end %>
+      <ul>
+        <li><%= link_to t(".list_location"), admin_locations_path %></li>
+        <li><%= link_to t(".add_location"),  new_admin_location_path %></li>
+      </ul>
+      </li>
+      <li class="submenu">
+       <%= link_to do %>
+        <i class="glyphicon glyphicon-gift"></i> <%= t ".sale" %>
+        <span class="caret pull-right"></span>
+      <% end %>
+      <ul>
+        <li><%= link_to t(".list_sale"), admin_sales_path %></li>
+        <li><%= link_to t(".add_sale"),  new_admin_sale_path %></li>
+      </ul>
+      </li>
+      <li class="submenu">
+       <%= link_to do %>
+        <i class="glyphicon glyphicon-pencil"></i> <%= t ".comment" %>
+        <span class="caret pull-right"></span>
+      <% end %>
+      <ul>
+        <li><%= link_to t(".comment"), admin_comments_path %></li>
+      </ul>
+      </li>
+      <li class="submenu">
+       <%= link_to do %>
+        <i class="glyphicon glyphicon-pencil"></i> <%= t ".order" %>
+        <span class="caret pull-right"></span>
+      <% end %>
+      <ul>
+        <li><%= link_to t(".order"), admin_orders_path %></li>
+      </ul>
+      </li>
   </ul>
 </div>
 </div>

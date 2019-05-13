@@ -1,0 +1,91 @@
+<div class="container show_location">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="text-center text-success"><%= t ".info_add" %> <%= @location.name %></h1>
+      <% flash.each do |key, value| %>
+      <div class="row">
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      </div>
+      <% end %>
+      <div class="row info-tour">
+        <div class="col-md-6">
+          <p><%= image_tag @location.tour.picture.url, class: "image-tour" %></p>
+          <blockquote><%= @location.tour.name %>: <span class="text-danger"><%= @location.name %></span></blockquote>
+        </div>
+        <div class="col-md-6">
+          <h2 class="text-center text-primary"><%= t ".money" %></h2>
+          <h1 class="text-center money"><%= @location.tour.money %></h1>
+          <h4 class="text-left"><span class="text-danger"><%= t ".time" %>: </span><%= @location.tour.duration %></h4>
+          <h4 class="text-left"><span class="text-danger"><%= t ".schedule" %>: </span><%= @location.tour.schedule %></h4>
+          <h4 class="text-left"><span class="text-danger"><%= t ".daydepart" %>: </span><%= @location.tour.departureDay %></h4>
+        </div>
+      </div>
+      <div class="row text-center">
+        <%= raw @location.description %>
+      </div>
+      <p class="text-center"><%= image_tag @location.picture.url %></p>
+      <blockquote class="text-center">
+      <p>Address: <span class="text-primary"><%= @location.address %></span></p>
+      </blockquote>
+      <div class="row row-center">
+        <h2 class="text-primary text-center"><%= t ".book_tour" %></h2>
+        <%= form_with url: orders_path, method: :post do |f| %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :phone %>
+            <%= f.text_field :phone, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :quantity, t(".number_ticket") %>
+            <%= f.number_field :quantity, name: "order[quantity]", class: "form-control"  %>
+          </div>
+          <div class="form-group">
+            <%= f.hidden_field :money, name: "order[money]", value: @location.tour.money, class: "form-control"  %>
+            <% if logged_in? %>
+            <%= f.hidden_field :user_id, name: "order[user_id]", value: current_user.id, class: "form-control"  %>
+            <% end %>
+            <%= f.hidden_field :location_id, name: "order[location_id]", value: @location.id, class: "form-control"  %>
+          </div>
+          <%= f.submit t(".book"), onclick: "return checkOrder()", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="row">
+        <%= form_with url: comments_path, remote: true, method: :post do |f| %>
+        <div class="form-group">
+            <%= f.label :content, t(".comment") %>
+            <%= f.text_area :content, name: "comment[content]", size: "30x10", class: "form-control"  %>
+            <% if logged_in? %>
+            <%= f.hidden_field :user_id, name: "comment[user_id]", value: current_user.id, class: "form-control"  %>
+            <% end %>
+            <%= f.hidden_field :location_id, name: "comment[location_id]", value: @location.id, class: "form-control"  %>
+        </div>
+        <%= f.submit t(".comment"), onclick: "return checkComment()", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <hr>
+      <p class="text-success">Lastest comment</p>
+      <hr>
+      <div id="comment_form">
+        <%= render "locations/location" %>
+      </div>
+    </div>
+    <div class="col-md-4 relate">
+      <h3 class="text-center bg-primary"><%= t ".add_relate" %></h3>
+      <% @locations.each do |l| %>
+      <div class="row row-relate">
+        <p class="text-center"><%= image_tag l.picture.url, class: "image-relate img-rounded" %></p>
+        <p class="text-center"><%= link_to l.name, location_path(l) %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

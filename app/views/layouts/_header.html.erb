@@ -1,25 +1,31 @@
 <header id="header">
   <div class="logo">
-    <%= link_to t(".hanoi"),"#" %>
+    <%= link_to t(".hanoi"),root_path %>
     <p><%= t ".hotelntour" %></p>
   </div>
   <nav>
     <ul>
-      <li><%= link_to t(".home"),"#" %></li>
-      <li><a href="">Tour du lịch Hà Nội  <i class="fas fa-angle-down"></i></a>
+      <li><%= link_to t(".home"),root_path %></li>
+      <li><a href=""><%= t ".tour_hanoi" %><i class="fas fa-angle-down"></i></a>
         <ul class="sub-menu">
-          <li><a href="">Tour du lịch trong ngày</a></li>
-          <li><a href="">Tour du lịch 2 ngày 1 đêm</a></li>
-          <li><a href="">Tour du lịch 3 ngày 2 đêm</a></li>
+          <% tour_names.each do |t| %>
+          <li><%= link_to t.name, tour_locations_path(t) %></li>
+          <% end %>
         </ul>
       </li>
-      <li><%= link_to t(".hotelhanoi") %></li>
+      <li><%= link_to t(".alllocation"), locations_path %>
+      </li>
       <% if logged_in? %>
         <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
         <% if current_user.permission? %>
           <li><%= link_to t(".admin_page"), admin_root_path %></li>
         <% else %>
-          <li><%= link_to current_user.name, user_path(current_user) %></li>
+          <li><%= link_to "My Account", user_path(current_user) %>
+            <ul class="sub-menu">
+              <li><%= link_to current_user.name, user_path(current_user) %></li>
+              <li><%= link_to "Cart",  orders_path %></li>
+            </ul>
+          </li>
         <% end %>
       <% else %>
       <li><%= link_to t(".signin"), login_path %></li>
