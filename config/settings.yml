@@ -4,3 +4,4 @@ maximum_email: 255
 paginate_perpage: 5
 paginate_homepage: 10
 maximum_newest: 3
+minimum_address: 5
