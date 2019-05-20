@@ -11,7 +11,7 @@ module Admin
     end
 
     def create
-      @location = Location.create location_params
+      @location = Location.new location_params
       if @location.save
         flash[:success] = t "admin.create.add_succ"
         redirect_to admin_locations_path
