@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.minimum_pass},
     allow_nil: true
   validates :address, length: {minimum: Settings.minimum_address}
-  validates :phone, length: {minimum: 10}
+  # validates :phone, length: {minimum: 10}
   validates :gender, inclusion: {in: ["Female","Male",nil]}
   validates :permission, inclusion: {in: [true,false]}
   scope :select_column, -> {select :id, :email, :name, :address,:phone, :permission}
